@@ -1,0 +1,315 @@
+<?php
+    $data = file_get_contents('https://voice.baidu.com/act/newpneumonia/newpneumonia/');
+    
+    // Data summary In China 
+    
+    $summaryDataIn =  explode('"summaryDataIn":', $data); 
+    
+    $SecondSummaryDataIn = explode(',"summaryDataOut', $summaryDataIn[1]);
+  
+   
+    ////////////////////////////////////////////////////////
+    // Data about China by Prov
+    
+    $chinaArray = explode('"caseList":', $data);
+    
+    $SecondChinaArray = explode(',"caseOutsideList', $chinaArray[1]);
+    
+   ////////////////////////////////////////////////////////
+   // Data summary Out 
+   
+    $summaryDataOut =  explode('"summaryDataOut":', $data); 
+    
+    $SecondSummaryDataOut = explode(',"share', $summaryDataOut[1]);
+    
+   
+    ////////////////////////////////////////////////////////
+    // Data outside of China
+   
+    $caseOutsideList = explode('"caseOutsideList":', $data); 
+    
+    $SecondCaseOutsideList = explode(',"dataSource', $caseOutsideList[1]);
+    
+    
+    
+?>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="stylesheet" href="css/style.bundle.css" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet" />
+    <!-- /Google fonts -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(60691441, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        trackHash:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/60691441" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    <title>COVID-2019</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="./img/logos/bacteria2.svg" alt="logo" class="logo__img" />
+          <div class="logo__text-box">
+            <p class="logo__text_up">Статистика</p>
+            <p class="logo__text_down">по COVID-2019</p>
+          </div>
+        </a>
+
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#yak1" class="nav__link">Китай</a></li>
+            <li class="nav__item"><a href="#yak2" class="nav__link">Россия</a></li>
+            <li class="nav__item"><a href="#yak3" class="nav__link">Мир</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- /Header -->
+
+    <!-- /Header -->
+
+    <main class="main">
+      <!-- Main sammary -->
+
+      <section class="summaryWorld section" >
+        <h2 class="heading-secondary u-center-text time">Ситуация в мире</h2>
+        <div class="container summaryWorld__container" id="summaryWorld"></div>
+        <div class="container">
+          <div class="img">
+            <img src="./img/world.jpg" alt="China" class="img__img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Summary China -->
+
+      <section class="summaryChina section " id="yak1">
+        <h2 class="heading-secondary u-center-text time">Ситуация в Китае</h2>
+        <div class="container summaryChina__container" id="summaryChina"></div>
+        <div class="container">
+          <div class="img">
+            <img src="./img/china.jpg" alt="China" class="img__img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- inside China -->
+
+      <section class="section">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr class="china__header">
+                <th class="table__headerElem heading-tertiary">Регион</th>
+                <th class="table__headerElem heading-tertiary">Новые <br> случаи</th>
+                <th class="table__headerElem heading-tertiary">Заражено</th>
+                <th class="table__headerElem heading-tertiary">Умерло</th>
+                <th class="table__headerElem heading-tertiary">Выздоровело</th>
+              </tr>
+            </thead>
+            
+                <tbody id="chinaTable">
+                    
+                </tbody>
+                
+            
+          </table>
+        </div>
+      </section>
+      
+      <!-- Summary Russia -->
+
+      <section class="summaryRussia section " id="yak2">
+        <h2 class="heading-secondary u-center-text">Ситуация в России</h2>
+        <p class="paragraph my-b-normal u-center-text">Данные обновлены: 11 марта 2020, 00:00:00</p>
+            <div class="container summaryRussia__container" id="summaryRussia">
+                
+            </div>
+                
+        
+      
+        
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__headerElem heading-tertiary">Регион</th>
+                <th class="table__headerElem heading-tertiary">Заражено</th>
+                <th class="table__headerElem heading-tertiary">Умерло</th>
+                <th class="table__headerElem heading-tertiary">Выздоровело</th>
+              </tr>
+            </thead>
+            <tbody class="tableRussia">
+                <tr>
+                    <td>Забайкальский край </td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                                        <tr>
+                    <td>Тюменская область</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                                        <tr>
+                    <td>Казань</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+                                        <tr>
+                    <td>Москва</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                                        <tr>
+                    <td>Санкт-Петербург</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                                        <tr>
+                    <td>Нижний Новгород</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                                        <tr>
+                    <td>Липецк</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                                        <tr>
+                    <td>Белгородская область</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                                        <tr>
+                    <td>Калининградская область</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                                        <tr>
+                    <td>Московская область</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- summary Outside -->
+
+      <section class="summaryOutside section" id="yak3">
+        <h2 class="heading-secondary u-center-text time">Ситуация вне Китая</h2>
+        
+            <div class="container summaryOutside__container" id="summaryOutside">
+                
+            </div> 
+                
+        
+      </section>
+
+      <!-- outside China -->
+
+      <section class="section">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr class="outside__header">
+                <th class="table__headerElem heading-tertiary">Страна</th>
+                <th class="table__headerElem heading-tertiary">Новые <br> случаи</th>
+                <th class="table__headerElem heading-tertiary">Заражено</th>
+                <th class="table__headerElem heading-tertiary">Умерло</th>
+                <th class="table__headerElem heading-tertiary">Выздоровело</th>
+              </tr>
+            </thead>
+            
+                <tbody id="outsideTable">
+                    
+                </tbody>
+                
+            
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container main-footer">
+        <p class="footer__p">Copyright © by Ochirov Aiur 2020.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/aiur95_/"><i class="fab fa-instagram"></i></a>
+          <a href="https://vk.com/aiurochirov"><i class="fab fa-vk"></i></a>
+          <a href="https://youtu.be/NjPLo4DsqWw"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="container footer__second">
+        <div class="metrika">
+            <!-- Yandex.Metrika informer -->
+                <a href="https://metrika.yandex.ru/stat/?id=60691441&amp;from=informer"
+                target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/60691441/3_1_ECECECFF_CCCCCCFF_0_pageviews"
+                style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a>
+            <!-- /Yandex.Metrika informer -->
+        </div>
+        <a href="version.html" class="footer__site-version">Version 1.2</a>
+      </div>
+      
+    </footer>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+    
+        let insideChina  = '<?php echo $SecondChinaArray[0];?>';
+        let outside = '<?php echo $SecondCaseOutsideList[0];?>';
+        let summaryChina = '<?php echo $SecondSummaryDataIn[0];?>';
+        let summaryOutside = '<?php echo $SecondSummaryDataOut[0]; ?>';
+        insideChina = JSON.parse(insideChina);
+        outside = JSON.parse(outside);
+        summaryChina = JSON.parse(summaryChina);
+        summaryOutside = JSON.parse(summaryOutside);
+        
+    </script>
+    <script src="js/bundle.js"></script>
+
+  </body>
+</html>
+
+

@@ -1,0 +1,170 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+            "type": "Feature",
+            "id": "Забайкальский край ",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [52.847258,116.200424]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3>Забайкальский край</font>"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "Тюменская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [57.541821,68.096045]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3>Тюменская область</font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Казань",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [55.796289,49.108795]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Москва",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [55.753215,37.622504]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Санкт-Петербург",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [59.938951,30.315635]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Нижний Новгород",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [56.326797,44.006516]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Липецк",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [52.60882,39.59922]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Белгородская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [50.872231,37.303198]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Калининградская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [54.56009,21.218944]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Московская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [55.815792,37.380031]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Краснодарский край",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [45.544904,39.610422]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Ленинградская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [59.337013,29.608975]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Ленинградская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [59.117698,56.225679]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "id": "Кемеровская область",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [54.89794,86.990382]
+            },
+            "properties": {
+                "balloonContentHeader": "<font size=3></font>"
+            }
+        }
+    ]
+}
